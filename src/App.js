@@ -1,23 +1,43 @@
-import logo from './logo.svg';
 import './App.css';
+import {Player} from "webvtt-player"
+import React, { useState } from 'react';
+
+
 
 function App() {
+  const [mp3File, setMp3File] = useState('');
+  const [vttFile, setVttFile] = useState('');
+
+  const handleMp3Change = (event) => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      const mp3Data = reader.result.split(',')[1];
+      setMp3File('data:audio/mp3;base64,' + mp3Data);
+    };
+    reader.readAsDataURL(event.target.files[0]);
+  };
+
+  const handleVttChange = (event) => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      const vttData = reader.result.split(',')[1];
+      setVttFile('data:text/vtt;base64,' + vttData);
+    };
+    reader.readAsDataURL(event.target.files[0]);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <label htmlFor="mp3Input">MP3 File:</label>
+      <input type="file" id="mp3Input" accept=".mp3" onChange={handleMp3Change} />
+
+      <label htmlFor="vttInput">VTT File:</label>
+      <input type="file" id="vttInput" accept=".vtt" onChange={handleVttChange} />
+
+      {mp3File && vttFile && <Player
+        audio={mp3File}
+        transcript={vttFile}
+      />}
     </div>
   );
 }
