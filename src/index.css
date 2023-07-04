@@ -12,6 +12,94 @@ code {
     monospace;
 }
 
-.active {
-  background: yellow;
+.webvtt-player .active {
+  background-color: #eee;
+  border: 1px solid #ccc;
+}
+
+.webvtt-player .match {
+  background-color: lightyellow;
+}
+
+.webvtt-player .line {
+  padding: 5px;
+  cursor: pointer;
+}
+
+.webvtt-player .time {
+  width: 110px;
+  float: left;
+  font-size: 10pt;
+  line-height: 14pt;
+}
+
+.webvtt-player .text {
+  margin-left: 110px;
+}
+.webvtt-player .transcript {
+  margin-top: 40px;
+  padding: 0px;
+}
+.webvtt-player .media {
+  width: 100%;
+  margin-right: auto;
+}
+
+.webvtt-player audio {
+  width: 100%;
+  background-color: #ccc;
+}
+
+.webvtt-player audio::-webkit-media-controls-panel {
+  background-color: #ccc;
+}
+
+
+.webvtt-player .controls {
+  padding: 5px;
+  text-align: center;
+  vertical-align: text-top;
+  background-color: #ccc;
+}
+
+.webvtt-player .seekBar {
+  vertical-align: middle;
+  width: 70%;
+}
+.search {
+  border-top: thin solid #ccc;
+  padding: 5px 5px 5px 5px;
+  font-size: 14pt;
+  margin-top: 5px;
+  display: none;
+}
+
+.search .container {
+  border: thin solid #ccc;
+}
+
+.search input {
+  font-size: 12pt;
+  border: none;
+  width: 90%;
+}
+
+.search input:focus {
+  outline: none;
+}
+
+
+.search .icon {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.player {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  right: 0;
+}
+audio {
+  height: 20px;
 }
