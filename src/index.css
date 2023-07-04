@@ -7,6 +7,25 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.timestamp {
+  border: 1px black solid;
+  width: 100px
+}
+
+.timestamp b {
+  color: red;
+}
+
+.timestamps {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 1;
+  height: 30px;
+  background: yellow;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
