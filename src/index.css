@@ -12,6 +12,6 @@ code {
     monospace;
 }
 
-active {
+.active {
   background: yellow;
 }
